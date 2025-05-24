@@ -9,7 +9,7 @@ export function ChartData({ symbol }) {
     if (!symbol) return;
 
     const API = import.meta.env.VITE_API_KEY;
-    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey=${API}`;
+    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey="071c17c668e14576a095a4ce0a39459f"`;
 
     fetch(url)
       .then((res) => res.json())

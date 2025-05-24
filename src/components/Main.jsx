@@ -99,7 +99,7 @@ export default function Main({ filteredCrypto, cryptoData, error }) {
                 className="bg-blue-500 text-white rounded-md p-2 text-sm cursor-pointer"
                 onClick={() => handleWatchList(crypto)}
               >
-                ✚ Watchlist
+                Watchlist
               </button>
             </div>
           </div>
