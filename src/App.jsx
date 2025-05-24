@@ -30,14 +30,13 @@ function App() {
     <div className="h-screen overflow-hidden">
       <div className="fixed bg-gray-100 top-0 h-18  w-full z-1 ">
         <NavBar searchInput={searchInput} setSearchInput={setSearchInput} />
-       
       </div>
 
-      <aside className="fixed sm:hidden top-16 left-0 w-64 h-[calc(100%-4rem)] shadow-md hidden md:block z-40">
+      <aside className="fixed hidden md:hidden lg:block top-16 left-0 w-64 h-[calc(100%-4rem)] shadow-md z-40">
         <Aside />
       </aside>
 
-      <main className="pt-16 md:ml-64 h-[calc(100%-4rem)] mt-5 overflow-y-auto ">
+      <main className="pt-16 lg:ml-64 h-[calc(100%-4rem)] mt-5 overflow-y-auto ">
         <Main filteredCrypto={filteredCrypto} cryptoData={cryptoData} setCryptoData={setCryptoData} error={error}  setError={setError} />
       </main>
     </div>

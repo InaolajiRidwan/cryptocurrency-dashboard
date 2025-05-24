@@ -9,8 +9,8 @@ export function ChartData({ symbol }) {
     if (!symbol) return;
 
     const API = import.meta.env.VITE_API_KEY;
-    console.log(API)
-    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey=071c17c668e14576a095a4ce0a39459f`;
+
+    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey=${API}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -64,18 +64,20 @@ export function ChartData({ symbol }) {
   };
 
   return (
-    <div className="p-4 shadow-lg rounded-lg my-4">
-      <h2 className="text-2xl text-center  uppercase font-extrabold mb-4 underline">
+    <div className="p-4 md:p-6 shadow-lg rounded-lg my-4 max-w-xl mx-auto">
+      <h2 className="text-xl md:text-2xl text-center uppercase font-extrabold mb-4 underline">
         Selected Coin Price
       </h2>
       {loading ? (
-        <p className="text-lg animate-pulse text-blue-600 font-semibold">
+        <p className="text-base md:text-lg animate-pulse text-blue-600 font-semibold">
           👈🏼 click the IMAGE to Load chart...
         </p>
       ) : chartData?.labels?.length > 0 ? (
         <Line data={chartData} options={options} />
       ) : (
-        <p>No data available for this symbol.</p>
+        <p className="text-center text-gray-600">
+          No data available for this symbol.
+        </p>
       )}
     </div>
   );

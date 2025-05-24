@@ -5,31 +5,32 @@ export default function NavBar({ searchInput, setSearchInput }) {
   const handleToggle = () => {
     setToggleState((prev) => !prev);
 
-    // Toggle multiple body classes
     document.body.classList.toggle("body-bg");
   };
 
   return (
-    <div className="flex justify-between shadow-md  p-5 px-10">
-      <div>
-        <h1 className="md:text-2xl text-sm text-black  cursor-pointer">
-          Crypto<span className="text-red-600 font-extrabold">AirNova</span>
-        </h1>
-      </div>
-      <div className="grid grid-cols-2 gap-4 items-center ">
+    <div className="flex flex-col md:flex-row justify-between items-center shadow-md p-4 md:p-5 bg-white">
+      <h1 className="text-base md:text-xl font-semibold text-black cursor-pointer mb-3 md:mb-0">
+        Crypto
+        <span className="text-red-600 font-extrabold">AirNova</span>
+      </h1>
+
+      <div className="flex w-full md:w-auto space-x-3 items-center">
         <input
-          className="border-3 rounded-sm h-8 p-3"
           type="text"
           value={searchInput}
-          placeholder="search for crypto"
           onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Search for crypto"
+          className="flex-grow md:flex-grow-0 border border-gray-300 rounded-sm h-10 px-3 focus:outline-none focus:ring-2 focus:ring-red-500"
         />
-        <div>
-          <button
-            style={{ color: toggleState ? "green" : "red", cursor: "pointer" }}
-            onClick={handleToggle}
-          >{`${toggleState ? "☀️" : "🌙"}`}</button>
-        </div>
+        <button
+          onClick={handleToggle}
+          style={{ color: toggleState ? "green" : "red", cursor: "pointer" }}
+          aria-label="Toggle theme"
+          className="text-2xl"
+        >
+          {toggleState ? "☀️" : "🌙"}
+        </button>
       </div>
     </div>
   );
