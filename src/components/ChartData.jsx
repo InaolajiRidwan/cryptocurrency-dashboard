@@ -65,7 +65,7 @@ export function ChartData({ symbol }) {
 
   return (
     <div className="p-4 shadow-lg rounded-lg my-4">
-      <h2 className="text-2xl text-center p-3 uppercase font-extrabold mb-4 underline">
+      <h2 className="text-2xl text-center  uppercase font-extrabold mb-4 underline">
         Selected Coin Price
       </h2>
       {loading ? (

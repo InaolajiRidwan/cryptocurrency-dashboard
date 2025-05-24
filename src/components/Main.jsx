@@ -41,7 +41,7 @@ export default function Main({ filteredCrypto, cryptoData, error }) {
       {filteredCrypto.length === 0 && !error && <p>Loading...</p>}
 
       {/* Crypto Cards Section */}
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-5">
         {filteredCrypto.map((crypto) => (
           <div
             key={crypto.id}
@@ -96,7 +96,7 @@ export default function Main({ filteredCrypto, cryptoData, error }) {
             <div className="flex flex-col justify-between items-end">
               <p className="text-right uppercase">{crypto.symbol}</p>
               <button
-                className="bg-blue-500 text-white rounded-md p-2 text-sm cursor-pointer"
+                className="bg-blue-500 text-white rounded-md p-1 text-sm cursor-pointer"
                 onClick={() => handleWatchList(crypto)}
               >
                 Watchlist
