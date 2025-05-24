@@ -84,8 +84,8 @@ export default function Main({ filteredCrypto, cryptoData, error }) {
                 className="cursor-pointer pt-4"
                 src={crypto.image}
                 alt={crypto.name}
-                width={50}
-                height={50}
+                width={24}
+                height={24}
                 onClick={() =>
                   setRenderChart(`${crypto.symbol.toUpperCase()}/USD`)
                 }
