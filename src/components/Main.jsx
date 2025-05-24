@@ -49,7 +49,7 @@ export default function Main({ filteredCrypto, cryptoData, error }) {
           >
             {/* Left Section */}
             <div className="flex flex-col justify-between">
-              <h2 className="text-lg italic">{crypto.name}</h2>
+              <h2 className="text-sm italic">{crypto.name}</h2>
               <p className="font-bold">${crypto.high_24h.toLocaleString()}</p>
               <div
                 className={`flex items-center space-x-1 ${
