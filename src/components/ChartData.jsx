@@ -9,8 +9,8 @@ export function ChartData({ symbol }) {
     if (!symbol) return;
 
     const API = import.meta.env.VITE_API_KEY;
-
-    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey=${API}`;
+    
+    const url = `https://api.twelvedata.com/time_series?symbol=${symbol.toUpperCase()}&interval=1min&apikey=071c17c668e14576a095a4ce0a39459f`;
 
     fetch(url)
       .then((res) => res.json())
@@ -49,6 +49,10 @@ export function ChartData({ symbol }) {
       });
   }, [symbol]);
 
+
+
+ 
+
   const options = {
     responsive: true,
     plugins: {
@@ -64,21 +68,21 @@ export function ChartData({ symbol }) {
   };
 
   return (
+    
     <div className="p-4 md:p-6 shadow-lg rounded-lg my-4 max-w-xl mx-auto">
-      <h2 className="text-xl md:text-2xl text-center uppercase font-extrabold mb-4 underline">
-        Selected Coin Price
-      </h2>
-      {loading ? (
-        <p className="text-base md:text-lg animate-pulse text-blue-600 font-semibold">
-          👈🏼 click the IMAGE to Load chart...
-        </p>
-      ) : chartData?.labels?.length > 0 ? (
-        <Line data={chartData} options={options} />
-      ) : (
-        <p className="text-center text-gray-600">
-          No data available for this symbol.
-        </p>
-      )}
-    </div>
+    <h2 className="text-xl md:text-2xl text-center uppercase font-extrabold mb-4 underline">
+      Selected Coin Price
+    </h2>
+    {loading ? (
+      <p className="text-base md:text-lg animate-pulse text-blue-600 font-semibold">
+        👈🏼 click the IMAGE to Load chart...
+      </p>
+    ) : chartData?.labels?.length > 0 ? (
+      <Line data={chartData} options={options} />
+    ) : (
+      <p className="text-center text-gray-600">No data available for this symbol.</p>
+    )}
+  </div>
+  
   );
 }
